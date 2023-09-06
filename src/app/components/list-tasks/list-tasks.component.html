@@ -4,6 +4,38 @@
   </div>
 
   <div class="list">
-    <p *ngIf="listaTareas.length === 0" class="empty-list">{{emptyTasks}}</p>
+    <table mat-table [dataSource]="listaTareas" class="mat-elevation-z8">
+      <!-- Columna "posición" -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Posición</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Columna "nombre" -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <!-- Columna "descripcion" -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+      </ng-container>
+
+      <!-- Columna "fecha" -->
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef>Fecha</th>
+        <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
+      </ng-container>
+
+      <!-- Filas de datos -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <p *ngIf="listaTareas.data.length === 0" class="empty-list">{{emptyTasks}}</p>
+
   </div>
 </div>
+
