@@ -11,7 +11,7 @@ import { Tarea } from 'src/app/models/tarea';
 export class ListTasksComponent {
 
   listaTareas = new MatTableDataSource<Tarea>([]);
-  displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'fecha'];
+  displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'fecha', 'acciones'];
   emptyTasks: string = "No hay tareas pendientes"
 
 
