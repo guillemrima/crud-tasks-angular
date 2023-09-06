@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Tarea } from 'src/app/models/tarea';
 
 @Component({
   selector: 'app-form-tasks',
@@ -10,9 +12,13 @@ export class FormTasksComponent {
 
   tareaForm: FormGroup;
   formDisabled = false;
+  nombre: string = "";
+  descripcion: string = "";
+  fecha: string = "";
 
+  listaTareas: Tarea[] = [];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
     this.tareaForm = this.formBuilder.group({
       nombre: [''],
       descripcion: [''],
@@ -20,13 +26,19 @@ export class FormTasksComponent {
     })
   }
 
-  getValues(event: Event) {
+  setTarea(event: Event) {
     event.preventDefault();
-    const values = this.tareaForm.value;
-  }
+    const tarea = this.tareaForm.value;
+    this.listaTareas.push(tarea);
 
-  enableFormSubmit() {
-    console.log("hola")
+    this.nombre = "";
+    this.descripcion = "";
+    this.fecha = "";
+
+    this._snackBar.open("¡Tarea registrada correctamente!", "Deshacer", {
+      duration: 2000
+    });
+
   }
 
 }

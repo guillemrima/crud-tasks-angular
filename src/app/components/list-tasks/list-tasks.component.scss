@@ -1,0 +1,25 @@
+.list-task-container {
+  background-color: rgb(157, 193, 255);
+  min-height: 25svh;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.list-task-container h1 {
+  text-align: center;
+  color: rgb(89, 89, 89);
+  font-weight: 500;
+}
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.empty-list {
+  color: rgb(89, 89, 89);
+  font-weight: 500;
+  margin-top: 2.5rem;
+}

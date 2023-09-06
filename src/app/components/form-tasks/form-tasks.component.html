@@ -1,26 +1,26 @@
 <div class="task-form-container">
 
-  <h1>Apunta tus tareas para no perderlas de vista</h1>
+  <h1>Apuntador de Tareas</h1>
 
-  <form class="task-form" [formGroup]="tareaForm" (submit)="getValues($event)" (keypress)="enableFormSubmit()">
+  <form class="task-form" [formGroup]="tareaForm" (submit)="setTarea($event)">
     <div class="input-container">
       <mat-form-field class="form-field">
         <mat-label>Nombre de la tarea</mat-label>
-        <input matInput formControlName="nombre">
+        <input matInput formControlName="nombre" [(ngModel)]="nombre" required=""/>
       </mat-form-field>
     </div>
 
     <div class="input-container">
       <mat-form-field class="form-field">
         <mat-label>Descripción de la tarea</mat-label>
-        <input matInput formControlName="descripcion">
+        <input matInput formControlName="descripcion" [(ngModel)]="descripcion" required="">
       </mat-form-field>
     </div>
 
     <div class="input-container">
       <mat-form-field class="form-field">
         <mat-label>Fecha límite de la tarea</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fecha">
+        <input matInput [matDatepicker]="picker" formControlName="fecha" [(ngModel)]="fecha" required="">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>

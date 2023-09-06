@@ -10,11 +10,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormTasksComponent,
+    ListTasksComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
