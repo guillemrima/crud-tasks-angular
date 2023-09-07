@@ -1,6 +1,14 @@
 <div class="details-task-container">
-  <h1>Historial de la administración de Tareas</h1>
-  <p *ngFor="let tarea of detallesTarea.data">{{tarea.nombre}}</p>
+  <h1>Detalles de la tarea</h1>
+  <div class="details-panel" *ngIf="taskSelected; else emptyDetailsTask">
+    {{taskSelected.nombre}}
+  </div>
+
+  <ng-template #emptyDetailsTask>
+    <div class="empty-task">
+      <p>Ninguna tarea seleccionada <br> Selecciona la posición de una tarea para ver sus detalles 😉</p>
+    </div>
+  </ng-template>
 </div>
 
 

@@ -10,14 +10,16 @@ import { Tarea } from 'src/app/models/tarea';
 
 export class DetailsComponent implements OnInit {
 
-  @Input() detallesTarea = new MatTableDataSource<Tarea>([]);
+  @Input() taskSelected: any;
+
+  isTaskSelected: boolean = false;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    console.log(this.detallesTarea)
+    console.log(this.taskSelected)
   }
 
 }

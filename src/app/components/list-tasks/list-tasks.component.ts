@@ -10,16 +10,16 @@ import { Tarea } from 'src/app/models/tarea';
 
 export class ListTasksComponent {
 
-  prueba = true;
-
   listaTareas = new MatTableDataSource<Tarea>([
     { id: 1, nombre: "Ir al gimnasio", descripcion: "Rutina de hombro y antebrazo", fecha: new Date("2023-09-06T12:00:00") },
     { id: 2, nombre: "Ir al dentista", descripcion: "Rutina de hombro y antebrazo", fecha: new Date("2023-09-06T12:00:00") },
     { id: 3, nombre: "Ir al Mercadona", descripcion: "Rutina de hombro y antebrazo", fecha: new Date("2023-09-06T12:00:00") },
     { id: 3, nombre: "Ir a ver a la abuela", descripcion: "Rutina de hombro y antebrazo", fecha: new Date("2023-09-06T12:00:00") }
   ]);
-  displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'fecha', 'finalizada', 'acciones'];
-  emptyTasks: string = "No hay tareas pendientes"
 
+  displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'fecha', 'finalizada', 'acciones'];
+  emptyTasks: string = "No hay tareas pendientes";
+
+  taskSelected: any = this.listaTareas.data[0];
 
 }
