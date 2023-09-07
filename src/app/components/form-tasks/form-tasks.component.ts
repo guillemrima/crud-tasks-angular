@@ -16,10 +16,12 @@ export class FormTasksComponent {
   descripcion: string = "";
   fecha: string = "";
 
-  listaTareas: Tarea[] = [];
+  listaTareas: Tarea[] = [
+  ];
 
   constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
     this.tareaForm = this.formBuilder.group({
+      id: [],
       nombre: [''],
       descripcion: [''],
       fecha: ['']
@@ -29,16 +31,32 @@ export class FormTasksComponent {
   setTarea(event: Event) {
     event.preventDefault();
     const tarea = this.tareaForm.value;
-    this.listaTareas.push(tarea);
+    const propiedades = Object.keys(tarea);
 
-    this.nombre = "";
-    this.descripcion = "";
-    this.fecha = "";
+    //Asignar la id de la tarea
+    tarea.id = this.listaTareas.length + 1
 
-    this._snackBar.open("¡Tarea registrada correctamente!", "Deshacer", {
-      duration: 2000
-    });
+    // Verificar si alguna propiedad está vacía
+    const propiedadesVacias = propiedades.filter(propiedad => tarea[propiedad] === '');
 
+    if (propiedadesVacias.length > 0) {
+      this._snackBar.open("Debes rellenar todos los datos del formulario", "Ok", {
+        duration: 2000
+      });
+    } else {
+      // Si todas las propiedades están llenas, registra la tarea
+      this.listaTareas.push(tarea);
+
+      this._snackBar.open("¡Tarea registrada correctamente!", "Deshacer", {
+        duration: 2000
+      });
+
+      this.nombre = "";
+      this.descripcion = "";
+      this.fecha = "";
+
+    }
   }
+
 
 }

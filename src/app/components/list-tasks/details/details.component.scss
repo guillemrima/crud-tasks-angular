@@ -1,0 +1,17 @@
+.details-task-container {
+  background-color: rgb(157, 255, 190);
+  min-height: 25svh;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border: 2px solid rgb(115, 250, 122);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(89, 89, 89);
+  font-weight: 500;
+}

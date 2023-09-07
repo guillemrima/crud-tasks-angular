@@ -6,21 +6,21 @@
     <div class="input-container">
       <mat-form-field class="form-field">
         <mat-label>Nombre de la tarea</mat-label>
-        <input matInput formControlName="nombre" [(ngModel)]="nombre" required=""/>
+        <input matInput formControlName="nombre" [(ngModel)]="nombre" required/>
       </mat-form-field>
     </div>
 
     <div class="input-container">
       <mat-form-field class="form-field">
         <mat-label>Descripción de la tarea</mat-label>
-        <input matInput formControlName="descripcion" [(ngModel)]="descripcion" required="">
+        <input matInput formControlName="descripcion" [(ngModel)]="descripcion" required>
       </mat-form-field>
     </div>
 
     <div class="input-container">
       <mat-form-field class="form-field">
         <mat-label>Fecha límite de la tarea</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fecha" [(ngModel)]="fecha" required="">
+        <input matInput [matDatepicker]="picker" formControlName="fecha" [(ngModel)]="fecha" required>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>

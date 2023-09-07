@@ -14,7 +14,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ListTasksComponent } from './components/list-tasks/list-tasks.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DetailsComponent } from './components/list-tasks/details/details.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
     AppComponent,
     FormTasksComponent,
     ListTasksComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSnackBarModule,
     MatCardModule,
     MatTableModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
